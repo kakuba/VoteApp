@@ -1,4 +1,4 @@
-<div *ngIf="(voteSubjects$ | async).lenght > 0">
+<div *ngIf="(voteSubjects$ | async).length > 0">
   <app-vote-subject *ngFor="let voteSubject of voteSubjects$ | async"
                     [voteSubject]="voteSubject"></app-vote-subject>
 </div>

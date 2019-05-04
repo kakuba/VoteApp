@@ -53,11 +53,17 @@ public class VoteServiceImpl implements VoteService {
     }
 
     private long countNegative(List<VoteEntity> voteEntities) {
+        if (voteEntities == null) {
+            return 0;
+        }
         Predicate<VoteEntity> voteEntityPredicate = VoteEntity::isVote;
         return voteEntities.stream().filter(voteEntityPredicate.negate()).count();
     }
 
     private long countPositive(List<VoteEntity> voteEntities) {
+        if (voteEntities == null) {
+            return 0;
+        }
         return voteEntities.stream().filter(VoteEntity::isVote).count();
     }
 

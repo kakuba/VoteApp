@@ -29,7 +29,7 @@ public class VoteSubjectEntity {
     @Column(name = "endDate")
     private Timestamp endDate;
 
-    @OneToMany(mappedBy = "voteEntity")
+    @OneToMany(mappedBy = "voteSubjectEntity")
     private List<VoteEntity> voteEntities;
 
     public Long getId() {
